@@ -43,16 +43,214 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		html, body, h1, h2, h3, h4, h5, h6 {
+			font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+
+		.cite {
+			padding: 0px;
+			background: #ffffff;
+			font-size: 18px;
+		}
+
+		.card {
+			border: 1px solid #ccc
+		}
+
+		p {
+			font-size: 18px;
+		}
+
+		a {
+			text-decoration: none;
+			color: #2196F3;
+		}
+		
+		.bibtexsection {
+			width: 100%;
+			height: 12em;
+			font-family: "Courier", monospace;
+			white-space: pre;
+			background-color: #f4f4f4;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: left;
+		}
+
+		table {
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			border-collapse: collapse;
+		}
+
+		#seq-container {
+			margin-top: 40px;
+			margin-bottom: 40px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		button {
+			padding: 10px;
+			border: none;
+			cursor: pointer;
+			background: #dce8f7;
+			color: #000;
+			font-size: 14px;
+			text-align: center;
+			height: 40px;
+			width: 130px;
+		}
+
+		button.pipeline-btn{
+			width: 120px;
+		}
+
+		button.selected {
+			background: #9bc8ff; /* Lighter background for selected */
+			color: #000;
+			font-weight: bold;
+		}
+
+		#seq-header {
+			margin-bottom: 0px;
+			text-align: center;
+		}
+
+		#container {
+			width: 100%;
+			margin: 0 auto;
+			display: flex;
+			gap: 16px;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: nowrap;
+		}
+
+
+		.viewer-row{
+		width:100%;
+		margin:0 auto 20px;
+		display:grid;
+		grid-template-columns:repeat(6, 1fr);   /* six equal columns */
+		gap:5px;                               /* uniform spacing */
+		}
+
+		.viewer-wrapper{
+		display:flex;
+		flex-direction:column;
+		align-items:center;
+		}
+
+		.viewer{
+		width:100%;
+		aspect-ratio:1/1;        /* perfect square */
+		position:relative;
+		background:#eee;
+		border:1px solid #333;
+		overflow:hidden;
+		}
+
+		.viewer canvas{
+		position:absolute;       /* stretch canvas to fill */
+		top:0;left:0;width:100%;height:100%;
+		}
+
+		canvas {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		select {
+			font-size: 1rem;
+			padding: 5px;
+		}
+
+		#video-container {
+			width: 95%;             /*  MUST MATCH container  */
+			margin: 10px auto;
+			text-align: center;
+		}
+
+		#sequenceVideo {
+			width: 100%;
+			height: auto;
+		}
+
+		#custom-table {
+			display: table;
+			width: 100%; /* Adjust as needed */
+			border-collapse: collapse;
+			border-spacing: 0;
+		}
+
+		.table-row {
+			display: table-row;
+		}
+
+		.small-image {
+			width: 85%; /* Reduce the width slightly */
+			height: auto; /* Maintain aspect ratio */
+			object-fit: cover; /* Ensure the image fits nicely */
+			margin: 0 auto; /* Center the image horizontally */
+			display: block; /* Ensure proper layout */
+		}
+
+		.viewer-row-img{
+		width:100%;
+		margin:0 auto 20px;
+		display:grid;
+		grid-template-columns:repeat(3, 1fr);   /* six equal columns */
+		gap:10px;                               /* uniform spacing */
+		}
+
+
+		.table-cell {
+			display: table-cell;
+			text-align: center; /* Center text horizontally */
+			vertical-align: middle; /* Center text vertically */
+			border: 1px solid white; /* White border lines */
+			padding: 0px; /* Optional: adjust padding for spacing */
+			background-color: transparent; /* No fill */
+			color: black; /* Adjust text color if needed */
+			width: 33.33%; /* Ensures all cells are of equal width */
+		}
+
+    .image-row {
+      display: flex;
+      justify-content: center; /* Centers the images horizontally */
+      gap: 20px; /* Adds space between the images */
+      flex-wrap: wrap; /* Allows images to wrap to the next line on smaller screens */
+      margin: 20px 0; /* Adds vertical spacing */
+    }
+
+    .image-row img {
+      max-width: 100%;
+      height: auto;
+      width: 45%; /* Adjusts the width of the images */
+      border: 1px solid #ccc; /* Optional: Adds a border around images */
+      border-radius: 4px; /* Optional: Rounds the corners of the images */
+    }
+	</style>
 </head>
 <body>
 
-
-  <section class="hero">
+<!-- Paper Title and Authors -->
+<section class="hero">
     <div class="hero-body">
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">VIN-NBV: A View Introspection Network for Next-Best-View Selection for Resource-Efficient 3D Reconstruction</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -121,24 +319,20 @@
     </div>
   </div>
 </section>
+<!-- Paper Title and Authors -->
 
-
-<!-- Teaser video-->
+<!-- Teaser Figure -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
+      <img src="static/images/teaser.png" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Average chamfer distance across all house objects as more acquisitions are made.
       </h2>
     </div>
   </div>
 </section>
-<!-- End teaser video -->
+<!-- Teaser Figure -->
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
@@ -148,7 +342,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Next Best View (NBV) algorithms aim to acquire an optimal set of images using minimal resources, time, or number of captures to enable efficient 3D reconstruction of a scene. Existing approaches often rely on prior scene knowledge or additional image captures and often develop policies that maximize coverage. Yet, for many real scenes with complex geometry and self-occlusions, coverage maximization does not lead to better reconstruction quality directly. In this paper, we propose the View Introspection Network (VIN), which is trained to predict the reconstruction quality improvement of views directly, and the VIN-NBV policy. A greedy sequential sampling-based policy, where at each acquisition step, we sample multiple query views and choose the one with the highest VIN predicted improvement score. We design the VIN to perform 3D-aware featurization of the reconstruction built from prior acquisitions, and for each query view create a feature that can be decoded into an improvement score. We then train the VIN using imitation learning to predict the reconstruction improvement score. We show that VIN-NBV improves reconstruction quality by ~30% over a coverage maximization baseline when operating with constraints on the number of acquisitions or the time in motion.
           </p>
         </div>
       </div>
@@ -158,35 +352,226 @@
 <!-- End paper abstract -->
 
 
-<!-- Image carousel -->
+<!-- Arch Diagram -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/combined_arch_diagram.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Average chamfer distance across all house objects as more acquisitions are made.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- Arch Diagram -->
+
+<!-- Interactive Models -->
 <section class="hero is-small">
+  	<!-- Page Container -->
+	<div class="w3-content w3-margin-top w3-margin-bottom" style="max-width:960px;">
+		<div class="w3-row-padding">
+			<div class="w3-display-container w3-row w3-white w3-margin-bottom">
+				<hr>
+
+				<div class="w3-center">
+					<h2 class="title is-3">10 Total Captures Comparison</h2>
+				</div>
+
+				<p class="subtitle has-text-centered" style="margin-top:10px;">
+					An interactive comparison of the final reconstruction after 10 total acquistions using our method (VIN-NBV) and our coverage baseline (Cov-NBV). Click the different object names to visualize more objects. Due to supplementary size limit we include only a few objects across all classes.
+				</p>
+	
+				<div id="coverage-container">
+					<div id="coverage-controls" style="display:flex;justify-content:center;margin:20px 0;gap:10px;">
+						<button class="coverage-btn" data-set="h004">House 4</button>
+						<button class="coverage-btn" data-set="h011">House 11</button>					
+						<button class="coverage-btn" data-set="h013">House 13</button>					
+						<button class="coverage-btn" data-set="d016">Dinosaur 16</button>
+						<button class="coverage-btn" data-set="d021">Dinosaur 21</button>					
+						<button class="coverage-btn" data-set="m013">Motorcycle 13</button>
+					</div>
+	
+					<div id="coverage-row" class="viewer-row" style="grid-template-columns:repeat(2,1fr); gap: 10px; width: 75%;">
+      					<div class="viewer-wrapper">
+							<div class="viewer"><canvas id="canvasC0"></canvas></div>
+							<h3>Cov-NBV</h3>
+						</div>
+      					<div class="viewer-wrapper">
+							<div class="viewer"><canvas id="canvasC1"></canvas></div>
+							<h3>VIN-NBV</h3>
+						</div>
+    				</div>
+					<!-- ============================================================ -->
+	
+					<p style="font-size:14px; margin-top:10px;">
+					<b>Controls:</b> Drag on any panel to rotate the shared camera; use the mouse wheel to zoom. Click
+					<span id="reset-view-2" style="color: blue; text-decoration: underline; cursor: pointer;">here</span> to reset view to default.
+					</p>
+				</div>
+
+
+				<hr>
+
+
+				<div class="w3-center">
+					<h2 class="title is-3">Final Reconstruction Under various Capture Time Limits</h2>
+				</div>
+
+				<p class="subtitle has-text-centered" style="margin-top:10px;">
+					Reconstruction of the object with more time in motion allowed for the robot. As the time in motion increases the reconstruction becomes quality improves. We compare below results between our coverage baseline and our method. Due to supplementary size limit we include only a few objects across all classes.
+				</p>
+
+				<div id="control-container" style="display:flex;flex-direction:row;justify-content:center;margin:20px 0;gap:20px;">
+					<!-- Pipeline Selection -->
+					<div id="pipeline-box" style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
+						<!-- <h5>SLAM</h5> -->
+						<div style="display: flex; flex-direction: row; gap: 5px;">
+							<button class="group1-btn" data-house="h004">House 4</button>
+							<button class="group1-btn" data-house="a005">Animal 5</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="viewer-row-img" style="width: 70%;">
+					<div class="viewer-wrapper">
+						<div class="viewer">
+							<img id="pic1"  class="small-image" style="margin-top: 3%;"/>
+							<h5 class="w3-center">Base View 1</h5>
+						</div>
+					</div>
+
+					<div class="viewer-wrapper">
+						<div class="viewer">
+							<img id="pic2"  class="small-image" style="margin-top: 3%;" />
+							<h5 class="w3-center">Base View 2</h5>
+						</div>
+					</div>
+
+					<div class="viewer-wrapper">
+						<div class="viewer">
+							<canvas id="canvasPC0"></canvas>
+						</div>	
+						<h5 class="w3-center">Inital Reconstruction (0s)</h5>					
+					</div>
+				</div>
+
+				<h3 class="w3-center">Cov-NBV</h3>
+
+				<div id="container-base" class="viewer-row">
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB1"></canvas></div><h5>15 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB2"></canvas></div><h5>30 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB3"></canvas></div><h5>45 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB4"></canvas></div><h5>60 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB5"></canvas></div><h5>75 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB6"></canvas></div><h5>90 s</h5></div>
+				</div>
+					
+				<h3 class="w3-center">VIN-NBV</h3>
+
+				<div id="container-ours" class="viewer-row">
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO1"></canvas></div><h5>15 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO2"></canvas></div><h5>30 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO3"></canvas></div><h5>45 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO4"></canvas></div><h5>60 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO5"></canvas></div><h5>75 s</h5></div>
+					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO6"></canvas></div><h5>90 s</h5></div>
+				</div>
+
+				<p style="font-size:14px; margin-top:10px;">
+					<b>Controls:</b> Drag on any panel to rotate the shared camera; use the mouse wheel to zoom. Click
+					<span id="reset-view-1" style="color: blue; text-decoration: underline; cursor: pointer;">here</span> to reset view to default.
+
+				</p>
+
+				<hr>
+		</div>
+	</div>
+
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" id="MathJax-script" async></script>
+<link
+	rel="stylesheet"
+	href="https://unpkg.com/img-comparison-slider@7/dist/styles.css"
+/>
+<script type="module" src="main.js"></script>
+</section>
+<!-- Interactive Models -->
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <source src="static/videos/banner_video.mp4"
+        type="video/mp4">
+      </video>
+      <h2 class="subtitle has-text-centered">
+        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+      </h2>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+
+<!-- Chamfer distance Diagram -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/house_combined_chamfer.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-centered">
+        Average chamfer distance across all house objects as more acquisitions are made.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- Chamfer distance Diagram -->
+
+
+
+<!-- Chamfer distance Diagram -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <div class="image-row">
+        <img src="static/images/chamfer_table.png" alt="MY ALT TEXT"/>
+        <img src="static/images/house_combined_chamfer.png" alt="MY ALT TEXT"/>
+      <!-- </div>
+      <img src="static/images/chamfer_table.png" alt="MY ALT TEXT"/> -->
+      <h2 class="subtitle has-text-centered">
+        Average chamfer distance across all house objects as more acquisitions are made.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- Chamfer distance Diagram -->
+
+
+<!-- Image carousel -->
+<!-- <section class="hero is-small">
   <div class="hero-body">
+    <img src="static/images/figure1.png" alt="Description of Figure 1" style="width:100%; max-width:800px; display:block; margin:auto;">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/house_combined_chamfer.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           First image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/teaser.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
           Second image description.
         </h2>
       </div>
       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
+        <img src="static/images/time_progression.png" alt="MY ALT TEXT"/>
         <h2 class="subtitle has-text-centered">
          Third image description.
        </h2>
      </div>
      <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
+      <img src="static/images/time_progression.png" alt="MY ALT TEXT"/>
       <h2 class="subtitle has-text-centered">
         Fourth image description.
       </h2>
@@ -194,56 +579,49 @@
   </div>
 </div>
 </div>
-</section>
+</section> -->
 <!-- End image carousel -->
 
 
-
-
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
 <!-- Video carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-video1">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel1.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video2">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
             <source src="static/videos/carousel2.mp4"
             type="video/mp4">
           </video>
         </div>
         <div class="item item-video3">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
             <source src="static/videos/carousel3.mp4"
             type="video/mp4">
           </video>
@@ -251,16 +629,11 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End video carousel -->
 
-
-
-
-
-
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,21 +643,22 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
-  <footer class="footer">
+<!-- Acknowledgement for template -->
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
@@ -301,6 +675,8 @@
     </div>
   </div>
 </footer>
+<!-- Acknowledgement for template -->
+
 
 <!-- Statcounter tracking code -->
   
