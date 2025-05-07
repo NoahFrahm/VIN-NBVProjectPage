@@ -1,4 +1,4 @@
 
 # point cloud objects, since they are large
-./point_clouds/*
+# ./point_clouds/*
 # *.ply
