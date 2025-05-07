@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
   });
 
-  loadHouse('a005');   // default house
-  loadCoverage('a005'); // default coverage set
+  loadHouse('h004');   // default house
+  loadCoverage('m013'); // default coverage set
   render();
 });

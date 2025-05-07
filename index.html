@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>VIN-NBV</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -253,17 +253,38 @@
             <h1 class="title is-1 publication-title">VIN-NBV: A View Introspection Network for Next-Best-View Selection for Resource-Efficient 3D Reconstruction</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="" target="_blank">Noah Frahm</a>,</span>
+
+                  <span class="author-block">
+                    <a href="" target="_blank">Dongxu Zhao</a><sup>*</sup>,</span>
+
+                  <span class="author-block">
+                    <a href="" target="_blank">Andrea Dunn</a><sup>*</sup>
                   </span>
+
+                  <span class="author-block">
+                    <a href="https://www.cs.unc.edu/~ron/" target="_blank">Ron Alterovitz</a>
+                  </span>
+
+                  <span class="author-block">
+                    <a href="" target="_blank">Jan-Michael Frahm</a>
+                  </span>
+
+                  <span class="author-block">
+                    <a href="https://sites.google.com/cs.unc.edu/lupalab" target="_blank">Junier Oliva</a>
+                  </span>
+
+                  <span class="author-block">
+                    <a href="https://www.cs.unc.edu/~ronisen/" target="_blank">Roni Sengupta</a>
+                  </span>
+
+
+
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block">University of North Carolina at Chapel Hill<br>Conferance name and year</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -281,7 +302,7 @@
                     </span>
 
                     <!-- Supplementary PDF link -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -289,11 +310,11 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/NoahFrahm/NBV_Crystal" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -326,9 +347,9 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="static/images/teaser.png" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
+      <!-- <h2 class="subtitle has-text-centered">
         Average chamfer distance across all house objects as more acquisitions are made.
-      </h2>
+      </h2> -->
     </div>
   </div>
 </section>
@@ -353,31 +374,57 @@
 
 
 <!-- Arch Diagram -->
-<section class="hero teaser">
+<section class="section is-light">
   <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="static/images/combined_arch_diagram.png" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Average chamfer distance across all house objects as more acquisitions are made.
-      </h2>
+    <!-- <div class="columns is-centered has-text-centered">
+      <h1 class="title is-3">Model architecture</h1>
+    </div> -->
+    <div class="columns is-centered has-text-centered" style="margin-bottom: 0.5rem;">
+      <h1 class="title is-3" style="margin-bottom: -5rem;">Policy Overview</h1>
     </div>
+
+      <div class="hero-body">
+        <img src="static/images/combined_arch_diagram.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-left">
+          Overview of the VIN-NBV Policy and the VIN architecture. The VIN is trained to predict the reconstruction improvement of a query view given a set of prior acquisitions. The VIN-NBV policy uses the VIN to select the next best view to acquire. The design of our policy makes it easy to modify with custom termination criteria and decision making logic.
+        </h2>
+      </div>
   </div>
 </section>
 <!-- Arch Diagram -->
 
+<!-- Chamfer distance graph + table -->
+<section class="section is-light">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered has-text-centered" style="margin-top: -5rem;">
+      <h1 class="title is-3" style="margin-bottom: -5rem;">Evaluation Results</h1>
+    </div>
+
+    <div class="hero-body">
+      <img src="static/images/combined_chart_table.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-left">
+        We show the final average chamfer distance of our method compared to prior works evaluated on the OmniObject3D houses category for 20 captures. We also graph the average chamfer distance of our method as more acquisitions are made. We show that our method outperforms all prior works and that the chamfer distance improves as more acquisitions are made.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- Chamfer distance graph + table -->
+
+
 <!-- Interactive Models -->
-<section class="hero is-small">
+<section class="hero is-small-light">
   	<!-- Page Container -->
 	<div class="w3-content w3-margin-top w3-margin-bottom" style="max-width:960px;">
-		<div class="w3-row-padding">
-			<div class="w3-display-container w3-row w3-white w3-margin-bottom">
-				<hr>
+		<!-- <div class="w3-row-padding"> -->
+        <div class="w3-display-container w3-row w3-white w3-margin-bottom">
+				<!-- <hr> -->
 
-				<div class="w3-center">
+				<div class="w3-center" style="margin-top: -2rem;">
 					<h2 class="title is-3">10 Total Captures Comparison</h2>
 				</div>
 
-				<p class="subtitle has-text-centered" style="margin-top:10px;">
+				<p class="subtitle has-text-left" style="margin-top:10px;">
 					An interactive comparison of the final reconstruction after 10 total acquistions using our method (VIN-NBV) and our coverage baseline (Cov-NBV). Click the different object names to visualize more objects. Due to supplementary size limit we include only a few objects across all classes.
 				</p>
 	
@@ -414,10 +461,10 @@
 
 
 				<div class="w3-center">
-					<h2 class="title is-3">Final Reconstruction Under various Capture Time Limits</h2>
+					<h2 class="title is-3">Final Reconstruction Under Various Capture Time Limits</h2>
 				</div>
 
-				<p class="subtitle has-text-centered" style="margin-top:10px;">
+				<p class="subtitle has-text-left" style="margin-top:10px;">
 					Reconstruction of the object with more time in motion allowed for the robot. As the time in motion increases the reconstruction becomes quality improves. We compare below results between our coverage baseline and our method. Due to supplementary size limit we include only a few objects across all classes.
 				</p>
 
@@ -511,39 +558,6 @@
   </div>
 </section> -->
 <!-- End teaser video -->
-
-
-<!-- Chamfer distance Diagram -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="static/images/house_combined_chamfer.png" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Average chamfer distance across all house objects as more acquisitions are made.
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- Chamfer distance Diagram -->
-
-
-
-<!-- Chamfer distance Diagram -->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <div class="image-row">
-        <img src="static/images/chamfer_table.png" alt="MY ALT TEXT"/>
-        <img src="static/images/house_combined_chamfer.png" alt="MY ALT TEXT"/>
-      <!-- </div>
-      <img src="static/images/chamfer_table.png" alt="MY ALT TEXT"/> -->
-      <h2 class="subtitle has-text-centered">
-        Average chamfer distance across all house objects as more acquisitions are made.
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- Chamfer distance Diagram -->
 
 
 <!-- Image carousel -->
@@ -648,12 +662,12 @@
 
 
 <!--BibTex citation -->
-  <!-- <section class="section" id="BibTeX">
+  <section class="section" id="BibTeX" style="margin-top: -5rem;">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section> -->
+</section>
 <!--End BibTex citation -->
 
 
@@ -666,8 +680,9 @@
 
           <p>
             This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            
+            <!-- You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative -->
+            <!-- Commons Attribution-ShareAlike 4.0 International License</a>. -->
           </p>
 
         </div>
