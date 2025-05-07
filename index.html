@@ -29,6 +29,9 @@
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
   <link rel="stylesheet" href="static/css/bulma-slider.min.css">
@@ -46,8 +49,17 @@
 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<style>
-		html, body, h1, h2, h3, h4, h5, h6 {
+	
+  <!-- html, body, h1, h2, h3, h4, h5, h6 {
+    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    margin: 0;
+    padding: 0;
+  } -->
+
+  <style>
+		
+
+    html, body, h1, h2, h3, h4, h5, h6 {
 			font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 			margin: 0;
 			padding: 0;
@@ -140,7 +152,7 @@
 		width:100%;
 		margin:0 auto 20px;
 		display:grid;
-		grid-template-columns:repeat(6, 1fr);   /* six equal columns */
+		grid-template-columns:repeat(4, 1fr);   /* four equal columns */
 		gap:5px;                               /* uniform spacing */
 		}
 
@@ -206,11 +218,11 @@
 		}
 
 		.viewer-row-img{
-		width:100%;
-		margin:0 auto 20px;
-		display:grid;
-		grid-template-columns:repeat(3, 1fr);   /* six equal columns */
-		gap:10px;                               /* uniform spacing */
+      width:100%;
+      margin:0 auto 20px;
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);   /* six equal columns */
+      gap:10px;                               /* uniform spacing */
 		}
 
 
@@ -260,31 +272,30 @@
                     <a href="" target="_blank">Dongxu Zhao</a><sup>*</sup>,</span>
 
                   <span class="author-block">
-                    <a href="" target="_blank">Andrea Dunn</a><sup>*</sup>
+                    <a href="" target="_blank">Andrea Dunn</a><sup>*</sup>,
                   </span>
 
                   <span class="author-block">
-                    <a href="https://www.cs.unc.edu/~ron/" target="_blank">Ron Alterovitz</a>
+                    <a href="https://www.cs.unc.edu/~ron/" target="_blank">Ron Alterovitz</a>,
                   </span>
 
                   <span class="author-block">
-                    <a href="" target="_blank">Jan-Michael Frahm</a>
+                    <a href="" target="_blank">Jan-Michael Frahm</a>,
                   </span>
 
+                  
                   <span class="author-block">
-                    <a href="https://sites.google.com/cs.unc.edu/lupalab" target="_blank">Junier Oliva</a>
+                    <a href="https://sites.google.com/cs.unc.edu/lupalab" target="_blank">Junier Oliva</a>,
                   </span>
 
                   <span class="author-block">
                     <a href="https://www.cs.unc.edu/~ronisen/" target="_blank">Roni Sengupta</a>
                   </span>
 
-
-
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">University of North Carolina at Chapel Hill<br>Conferance name and year</span>
+                    <span class="author-block">University of North Carolina at Chapel Hill<br>Submitted to CoRL 2025</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -314,12 +325,12 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/NoahFrahm/NBV_Crystal" target="_blank"
+                    <a href="" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
-                    <span>Code</span>
+                    <span>Code (coming soon)</span>
                   </a>
                 </span>
 
@@ -333,6 +344,7 @@
                   <span>arXiv</span>
                 </a>
               </span>
+
             </div>
           </div>
         </div>
@@ -379,16 +391,16 @@
     <!-- <div class="columns is-centered has-text-centered">
       <h1 class="title is-3">Model architecture</h1>
     </div> -->
-    <div class="columns is-centered has-text-centered" style="margin-bottom: 0.5rem;">
-      <h1 class="title is-3" style="margin-bottom: -5rem;">Policy Overview</h1>
+    <div class="columns is-centered has-text-centered">
+      <h1 class="title is-3" style="margin-bottom: -2rem;">Policy Overview</h1>
     </div>
 
-      <div class="hero-body">
-        <img src="static/images/combined_arch_diagram.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-left">
-          Overview of the VIN-NBV Policy and the VIN architecture. The VIN is trained to predict the reconstruction improvement of a query view given a set of prior acquisitions. The VIN-NBV policy uses the VIN to select the next best view to acquire. The design of our policy makes it easy to modify with custom termination criteria and decision making logic.
-        </h2>
-      </div>
+    <div class="hero-body">
+      <img src="static/images/combined_arch_diagram.png" alt="MY ALT TEXT"/>
+      <h2 class="subtitle has-text-left">
+        Overview of the VIN-NBV Policy and the VIN architecture. The VIN is trained to predict the reconstruction improvement of a query view given a set of prior acquisitions. The VIN-NBV policy uses the VIN to select the next best view to acquire. The design of our policy makes it easy to modify with custom termination criteria and decision making logic.
+      </h2>
+    </div>
   </div>
 </section>
 <!-- Arch Diagram -->
@@ -397,7 +409,7 @@
 <section class="section is-light">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered has-text-centered" style="margin-top: -5rem;">
+    <div class="columns is-centered has-text-centered" style="margin-top: -7rem;">
       <h1 class="title is-3" style="margin-bottom: -5rem;">Evaluation Results</h1>
     </div>
 
@@ -416,11 +428,9 @@
 <section class="hero is-small-light">
   	<!-- Page Container -->
 	<div class="w3-content w3-margin-top w3-margin-bottom" style="max-width:960px;">
-		<!-- <div class="w3-row-padding"> -->
         <div class="w3-display-container w3-row w3-white w3-margin-bottom">
-				<!-- <hr> -->
 
-				<div class="w3-center" style="margin-top: -2rem;">
+				<div class="w3-center" style="margin-top: -4.6rem; margin-bottom: 2.2rem;">
 					<h2 class="title is-3">10 Total Captures Comparison</h2>
 				</div>
 
@@ -428,14 +438,13 @@
 					An interactive comparison of the final reconstruction after 10 total acquistions using our method (VIN-NBV) and our coverage baseline (Cov-NBV). Click the different object names to visualize more objects. Due to supplementary size limit we include only a few objects across all classes.
 				</p>
 	
-				<div id="coverage-container">
+        <div id="coverage-container">
 					<div id="coverage-controls" style="display:flex;justify-content:center;margin:20px 0;gap:10px;">
-						<button class="coverage-btn" data-set="h004">House 4</button>
-						<button class="coverage-btn" data-set="h011">House 11</button>					
-						<button class="coverage-btn" data-set="h013">House 13</button>					
-						<button class="coverage-btn" data-set="d016">Dinosaur 16</button>
-						<button class="coverage-btn" data-set="d021">Dinosaur 21</button>					
+						<button class="coverage-btn" data-set="m027">Motorcycle 27</button>
 						<button class="coverage-btn" data-set="m013">Motorcycle 13</button>
+						<button class="coverage-btn" data-set="h038">House 38</button>
+						<button class="coverage-btn" data-set="h026">House 26</button>
+						<button class="coverage-btn" data-set="h017">House 17</button>
 					</div>
 	
 					<div id="coverage-row" class="viewer-row" style="grid-template-columns:repeat(2,1fr); gap: 10px; width: 75%;">
@@ -448,7 +457,6 @@
 							<h3>VIN-NBV</h3>
 						</div>
     				</div>
-					<!-- ============================================================ -->
 	
 					<p style="font-size:14px; margin-top:10px;">
 					<b>Controls:</b> Drag on any panel to rotate the shared camera; use the mouse wheel to zoom. Click
@@ -456,24 +464,23 @@
 					</p>
 				</div>
 
-
 				<hr>
 
 
 				<div class="w3-center">
-					<h2 class="title is-3">Final Reconstruction Under Various Capture Time Limits</h2>
+					<h2 class="title is-3" style="margin-top: 2.2rem; margin-bottom: 2.2rem;">Final Reconstruction Under Various Capture Time Limits</h2>
 				</div>
 
 				<p class="subtitle has-text-left" style="margin-top:10px;">
 					Reconstruction of the object with more time in motion allowed for the robot. As the time in motion increases the reconstruction becomes quality improves. We compare below results between our coverage baseline and our method. Due to supplementary size limit we include only a few objects across all classes.
 				</p>
 
-				<div id="control-container" style="display:flex;flex-direction:row;justify-content:center;margin:20px 0;gap:20px;">
-					<!-- Pipeline Selection -->
+		
+        <div id="control-container" style="display:flex;flex-direction:row;justify-content:center;margin:20px 0;gap:20px;">
 					<div id="pipeline-box" style="display: flex; flex-direction: row; align-items: center; gap: 10px;">
-						<!-- <h5>SLAM</h5> -->
 						<div style="display: flex; flex-direction: row; gap: 5px;">
 							<button class="group1-btn" data-house="h004">House 4</button>
+							<button class="group1-btn" data-house="h011">House 11</button>
 							<button class="group1-btn" data-house="a005">Animal 5</button>
 						</div>
 					</div>
@@ -509,8 +516,6 @@
 					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB2"></canvas></div><h5>30 s</h5></div>
 					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB3"></canvas></div><h5>45 s</h5></div>
 					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB4"></canvas></div><h5>60 s</h5></div>
-					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB5"></canvas></div><h5>75 s</h5></div>
-					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasB6"></canvas></div><h5>90 s</h5></div>
 				</div>
 					
 				<h3 class="w3-center">VIN-NBV</h3>
@@ -520,8 +525,6 @@
 					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO2"></canvas></div><h5>30 s</h5></div>
 					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO3"></canvas></div><h5>45 s</h5></div>
 					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO4"></canvas></div><h5>60 s</h5></div>
-					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO5"></canvas></div><h5>75 s</h5></div>
-					<div class="viewer-wrapper"><div class="viewer"><canvas id="canvasO6"></canvas></div><h5>90 s</h5></div>
 				</div>
 
 				<p style="font-size:14px; margin-top:10px;">
@@ -543,58 +546,6 @@
 </section>
 <!-- Interactive Models -->
 
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section> -->
-<!-- End teaser video -->
-
-
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <img src="static/images/figure1.png" alt="Description of Figure 1" style="width:100%; max-width:800px; display:block; margin:auto;">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <img src="static/images/house_combined_chamfer.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/teaser.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <img src="static/images/time_progression.png" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <img src="static/images/time_progression.png" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
 
 
 <!-- Youtube video -->
@@ -615,36 +566,6 @@
 </section> -->
 <!-- End youtube video -->
 
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
 
 <!-- Paper poster -->
 <!-- <section class="hero is-small is-light">

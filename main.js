@@ -20,12 +20,12 @@ let cameraZ     = -initialCameraZ;
 let cam2Yaw=0, cam2Pitch=0, cam2Z=-initialCameraZ;
 
 /* ---------- constants ---------- */
-const TIMES   = [15,30,45,60,75,90];           // six time points for grid
-const GRID_LEN = TIMES.length;                 // 6
+const TIMES   = [15,30,45,60];      // four time points for grid
+const GRID_LEN = TIMES.length;      // 4
 
 const TOP_PC_ID = 'canvasPC0';
-const BASE_ID = ['canvasB1','canvasB2','canvasB3','canvasB4','canvasB5','canvasB6'];
-const OURS_ID = ['canvasO1','canvasO2','canvasO3','canvasO4','canvasO5','canvasO6'];
+const BASE_ID = ['canvasB1','canvasB2','canvasB3','canvasB4'];
+const OURS_ID = ['canvasO1','canvasO2','canvasO3','canvasO4'];
 
 const COVER_ID = ['canvasC0','canvasC1'];
 const COVER_LEN = COVER_ID.length;   // 2
@@ -227,7 +227,7 @@ async function loadRow(rowKey, ids, paths){
 }
 
 async function setInitialZoom(paths){
-  const ply = await loadPLY(paths[4]);   // skip sparse time‑0 if needed
+  const ply = await loadPLY(paths[Math.floor(paths.length/2)]);
   let maxR = 0;
   for (let i = 0; i < ply.positions.length; i += 3) {
     const x = ply.positions[i], y = ply.positions[i+1], z = ply.positions[i+2];
@@ -246,7 +246,7 @@ async function loadHouse(house){
 }
 
 async function loadCoverage(setName){
-  const paths = ['BASE','OURS'].map(i=>`./point_clouds/${setName}/${i}_${setName}.ply`);
+  const paths = ['BASE','OURS'].map(i=>`./point_clouds/cov10/${setName}/${i}_${setName}.ply`);
   for(let i=0;i<COVER_LEN;i++){
     const ply = await loadPLY(paths[i]);
     const canvas=document.getElementById(COVER_ID[i]);
