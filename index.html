@@ -272,7 +272,7 @@
                     <a href="https://www.linkedin.com/in/dongxu-zhao-109524154" target="_blank">Dongxu Zhao</a><sup>*</sup>,</span>
 
                   <span class="author-block">
-                    <a href="" target="_blank">Andrea Dunn</a><sup>*</sup>,
+                    <a href="" target="_blank">Andrea Dunn-Beltran</a><sup>*</sup>,
                   </span>
 
                   <span class="author-block">
@@ -301,8 +301,9 @@
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
+                      
+                      <!-- Arxiv PDF link -->
+                      <!-- <span class="link-block">
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
@@ -310,7 +311,7 @@
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
                     <!-- Supplementary PDF link -->
                     <!-- <span class="link-block">
@@ -397,9 +398,9 @@
 
     <div class="hero-body">
       <img src="static/images/combined_arch_diagram.png" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-left">
+      <p class="subtitle has-text-left">
         Overview of the VIN-NBV Policy and the VIN architecture. The VIN is trained to predict the reconstruction improvement of a query view given a set of prior acquisitions. The VIN-NBV policy uses the VIN to select the next best view to acquire. The design of our policy makes it easy to modify with custom termination criteria and decision making logic.
-      </h2>
+      </p>
     </div>
   </div>
 </section>
@@ -415,9 +416,9 @@
 
     <div class="hero-body">
       <img src="static/images/combined_chart_table.png" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-left">
+      <p class="subtitle has-text-left">
         We show the final average chamfer distance of our method compared to prior works evaluated on the OmniObject3D houses category for 20 captures. We also graph the average chamfer distance of our method as more acquisitions are made. We show that our method outperforms all prior works and that the chamfer distance improves as more acquisitions are made.
-      </h2>
+      </p>
     </div>
   </div>
 </section>
@@ -432,11 +433,11 @@
         <div class="w3-display-container w3-row w3-white w3-margin-bottom">
 
 				<div class="w3-center" style="margin-top: -4.6rem; margin-bottom: 2.2rem;">
-					<h2 class="title is-3">10 Total Captures Comparison</h2>
+					<h2 class="title is-3">10 Acquisition Comparison</h2>
 				</div>
 
 				<p class="subtitle has-text-left" style="margin-top:10px;">
-					An interactive comparison of the final reconstruction after 10 total acquistions using our method (VIN-NBV) and our coverage baseline (Cov-NBV). Click the different object names to visualize more objects. Due to supplementary size limit we include only a few objects across all classes.
+					An interactive comparison of the final reconstruction after 10 total acquistions using our method (VIN-NBV) and our coverage baseline (Cov-NBV). Click the different object names to visualize more objects.
 				</p>
 	
         <div id="coverage-container">
@@ -469,11 +470,11 @@
 
 
 				<div class="w3-center">
-					<h2 class="title is-3" style="margin-top: 2.2rem; margin-bottom: 2.2rem;">Final Reconstruction Under Various Capture Time Limits</h2>
+					<h2 class="title is-3" style="margin-top: 2.2rem; margin-bottom: 2.2rem;">Time in Motion Comparison</h2>
 				</div>
 
 				<p class="subtitle has-text-left" style="margin-top:10px;">
-					Reconstruction of the object with more time in motion allowed for the robot. As the time in motion increases the reconstruction becomes quality improves. We compare below results between our coverage baseline and our method. Due to supplementary size limit we include only a few objects across all classes.
+					We provide an interactive comparison of the final reconstruction under different time in motion limits. Under the different time limits the robot is forced to complete all acquistions in a certain time. The robot can move for a maximum of 15, 30, 45, and 60 seconds during acquistion. We compare our method (VIN-NBV) with the coverage baseline Cov-NBV and show the final results.
 				</p>
 
 		
