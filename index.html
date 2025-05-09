@@ -396,7 +396,7 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
+        <h2 class="title is-3" style="margin-bottom: 2rem; margin-top: -0.5rem;">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Next Best View (NBV) algorithms aim to acquire an optimal set of images using minimal resources, time, or number of captures to enable efficient 3D reconstruction of a scene. Existing approaches often rely on prior scene knowledge or additional image captures and often develop policies that maximize coverage. Yet, for many real scenes with complex geometry and self-occlusions, coverage maximization does not lead to better reconstruction quality directly. In this paper, we propose the View Introspection Network (VIN), which is trained to predict the reconstruction quality improvement of views directly, and the VIN-NBV policy. A greedy sequential sampling-based policy, where at each acquisition step, we sample multiple query views and choose the one with the highest VIN predicted improvement score. We design the VIN to perform 3D-aware featurization of the reconstruction built from prior acquisitions, and for each query view create a feature that can be decoded into an improvement score. We then train the VIN using imitation learning to predict the reconstruction improvement score. We show that VIN-NBV improves reconstruction quality by ~30% over a coverage maximization baseline when operating with constraints on the number of acquisitions or the time in motion.
@@ -421,7 +421,7 @@
 
     <div class="hero-body">
       <img src="static/images/combined_arch_diagram.png" alt="MY ALT TEXT"/>
-      <p class="subtitle has-text-left">
+      <p class="subtitle has-text-left" style="margin-top: 0.7rem;">
         Overview of the VIN-NBV Policy and the VIN architecture. The VIN is trained to predict the reconstruction improvement of a query view given a set of prior acquisitions. The VIN-NBV policy uses the VIN to select the next best view to acquire. The design of our policy makes it easy to modify with custom termination criteria and decision making logic.
       </p>
     </div>
@@ -434,7 +434,7 @@
   <div class="container is-max-desktop">
 
     <div class="columns is-centered has-text-centered" style="margin-top: -7rem;">
-      <h1 class="title is-3" style="margin-bottom: -5rem;">Evaluation Results</h1>
+      <h1 class="title is-3" style="margin-bottom: -2.5rem;">Evaluation Results</h1>
     </div>
 
     <div class="hero-body">
@@ -454,8 +454,7 @@
 	<div class="w3-content w3-margin-top w3-margin-bottom" style="max-width:960px;">
   <!-- <div class="container is-max-desktop"> -->
         <div class="w3-display-container w3-row w3-white w3-margin-bottom">
-
-				<div class="w3-center" style="margin-top: -4.6rem; margin-bottom: 2.2rem;">
+				<div class="w3-center" style="margin-top: -5rem; margin-bottom: 2.2rem;">
 					<h2 class="title is-3">10 Acquisition Comparison</h2>
 				</div>
 
